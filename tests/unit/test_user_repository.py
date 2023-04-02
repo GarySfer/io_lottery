@@ -14,8 +14,30 @@ def test_can_instantiate_user_repository(
     pass
 
 
+def test_raises_on_get_method(
+    user_repository: UserRepository,
+) -> None:
+    with raises(NotImplementedError):
+        user_repository.get()
+
+
 def test_raises_on_add_method(
     user_repository: UserRepository,
 ) -> None:
     with raises(NotImplementedError):
         user_repository.add()
+
+
+def test_raises_on_delete_method(
+    user_repository: UserRepository,
+) -> None:
+    with raises(NotImplementedError):
+        user_repository.update()
+
+
+def test_raises_on_delete_method(
+    user_repository: UserRepository,
+) -> None:
+    with raises(NotImplementedError):
+        user_repository.delete()
+

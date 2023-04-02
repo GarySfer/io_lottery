@@ -1,9 +1,9 @@
-import json
-
 from factory import DictFactory
 from factory.fuzzy import FuzzyInteger, FuzzyText, FuzzyFloat
-
+import pytest
 from io_lottery.app import app
+
+from io_lottery.app import upgrade_user
 
 
 class UserPayloadFactory(DictFactory):
@@ -42,3 +42,7 @@ def test_returns_unimplemented_on_new_user() -> None:
     with app.test_client() as c:
         actual = c.post("/users_new")
     assert actual.status_code == 500
+
+def test_upgrade_user() -> None:
+    actual = upgrade_user(2137)
+    assert actual.status_code == 200
