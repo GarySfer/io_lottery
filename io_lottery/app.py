@@ -29,7 +29,6 @@ app = Flask(__name__)
 #     controller = AddUserController(repository=repository)
 #     controller.add(request=AddUserRequest(json=request.json))
 #     return Response(response=jsonify(request.json), status=201)
-    # return jsonify(request.json)
 
 
 # @app.put("/users/<id>")
